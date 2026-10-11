@@ -7,7 +7,8 @@ Produces, under <out>/packages/:
   cryptyx-agent-plugin-vX.Y.Z  portable Agent Plugins 1.0.0 package (Cursor, Hermes, ...)
   cryptyx-claude-vX.Y.Z        Claude Code / Grok Build package (.claude-plugin + .mcp.json)
   cryptyx-codex-vX.Y.Z         Codex marketplace wrapping the portable package
-plus a SHA256SUMS file. Standard library only; the repository root is not a plugin.
+plus a SHA256SUMS file. Standard library only. The repository root is also an
+installable plugin (.claude-plugin/ + .mcp.json + skills/) for hosts that clone it directly.
 """
 
 from __future__ import annotations
@@ -62,6 +63,16 @@ def validate_sources() -> str:
     ]
     if any(s.get("url") != MCP_URL for s in servers):
         fail(f"every MCP server must use {MCP_URL}")
+
+    # The repo root is itself an installable plugin (Grok Build / Claude Code clone it
+    # directly), so its manifests must match the source copies byte for byte.
+    for root_file, src in (
+        (".claude-plugin/plugin.json", "src/plugins/claude/plugin.json"),
+        (".claude-plugin/marketplace.json", "src/plugins/claude/marketplace.json"),
+        (".mcp.json", "src/plugins/claude/mcp.json"),
+    ):
+        if (ROOT / root_file).read_bytes() != (ROOT / src).read_bytes():
+            fail(f"{root_file} differs from {src}; copy the source file to the root")
 
     # Skills: expected set, valid frontmatter, local links resolve.
     found = sorted(p.name for p in (ROOT / "skills").iterdir() if p.is_dir())

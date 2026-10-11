@@ -36,9 +36,21 @@ Then ask:
 | [cryptyx-investigate](skills/cryptyx-investigate/SKILL.md) | Notable Read and depth on demand: drivers, setups, backtests |
 | [cryptyx-exchange-bridge](skills/cryptyx-exchange-bridge/SKILL.md) | Reads holdings from an exchange connection; symbols only |
 
+## Install
+
+- **Grok Build:** install `cryptyx` from the xAI plugin marketplace.
+- **Claude Code:** `/plugin marketplace add cryptyx-ai/agents`, then install `cryptyx`. Open `/mcp` to sign in.
+- **Any MCP client:** add `https://mcp.cryptyx.ai/api/mcp` as a remote MCP server and sign in with OAuth.
+
+## Network endpoints and credentials
+
+- The only network endpoint is the CRYPTYX remote MCP server, `https://mcp.cryptyx.ai/api/mcp`, over HTTPS.
+- Credentials: OAuth sign-in handled by your client. The plugin contains no API keys, scripts, hooks or local executables.
+- Data sent: coin symbols and the read requested. Never balances, position sizes or account identifiers.
+
 ## Packages
 
-`python3 scripts/build-distributions.py dist` builds three packages under `dist/packages/`, with a `SHA256SUMS` file:
+The repository root is itself a plugin. `python3 scripts/build-distributions.py dist` also builds three standalone packages under `dist/packages/`, with a `SHA256SUMS` file:
 
 - `cryptyx-agent-plugin-vX.Y.Z`: portable [Agent Plugins 1.0.0](https://agent-plugins.org/) package (Cursor, Hermes and other compatible clients).
 - `cryptyx-claude-vX.Y.Z`: Claude Code package (also readable by Grok Build).

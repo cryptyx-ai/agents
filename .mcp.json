@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "cryptyx": { "type": "http", "url": "https://mcp.cryptyx.ai/api/mcp" }
+  }
+}
