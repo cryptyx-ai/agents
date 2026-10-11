@@ -1,6 +1,6 @@
 ---
 name: cryptyx
-description: Ground crypto decisions in CRYPTYX intelligence. Use when the user names coins, mentions their book, watchlist or a recurring buy or sell, or asks whether to add, trim or hold. Routes to the Positioning Read, the Allocation Read, or deeper engine reads, and keeps the first answer sharp.
+description: Ground crypto decisions in CRYPTYX intelligence. Use when the user names coins, mentions their book, watchlist or a recurring buy or sell, or asks whether to add, trim or hold. Routes to the Pressure Read, the Allocation Read, the Notable Read or deeper engine reads, and keeps the first answer sharp.
 ---
 
 # CRYPTYX
@@ -13,10 +13,11 @@ Remote MCP: `https://mcp.cryptyx.ai/api/mcp` (OAuth sign-in through the user's c
 
 | The user… | Read | Tool | Skill |
 | --- | --- | --- | --- |
-| Names coins: "where is positioning stretched?", "compare ETH and AVAX" | Positioning Read | `get_heat_check` *(free)* | [cryptyx-holdings](../cryptyx-holdings/SKILL.md) |
-| Refers to their book or holdings | Positioning Read on the book | Exchange read, then `get_heat_check` | [cryptyx-exchange-bridge](../cryptyx-exchange-bridge/SKILL.md) |
+| Names coins: "where is pressure building?", "compare ETH and AVAX" | Pressure Read | `get_heat_check` *(free)* | [cryptyx-holdings](../cryptyx-holdings/SKILL.md) |
+| Refers to their book or holdings | Pressure Read on the book | Exchange read, then `get_heat_check` | [cryptyx-exchange-bridge](../cryptyx-exchange-bridge/SKILL.md) |
 | Runs a recurring buy or sell (DCA, treasury distribution) | Allocation Read | `check_dca` *(free)* | [cryptyx-holdings](../cryptyx-holdings/SKILL.md) |
-| Asks why, or wants to test an idea | Depth on demand | Depends on the question | [cryptyx-investigate](../cryptyx-investigate/SKILL.md) |
+| Asks why, or what else stands out | Notable Read | `get_notable_read` *(free)* | [cryptyx-investigate](../cryptyx-investigate/SKILL.md) |
+| Wants to test an idea or go further | Depth on demand | Depends on the question | [cryptyx-investigate](../cryptyx-investigate/SKILL.md) |
 | Asks what CRYPTYX can do | Overview | `get_cryptyx_overview` *(free)* | — |
 
 Unsure whether a coin is covered? Call `check_coverage` *(free)*. `get_data_liveness` *(free)* reports when each data source last updated.

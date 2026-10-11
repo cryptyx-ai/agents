@@ -10,30 +10,30 @@ An agent connected to Coinbase, Kraken, Binance or Hyperliquid knows what you ho
 
 ## What your agent gets
 
-**Positioning Read.** For every coin in your book: crowd, leverage and volatility, each measured against the coin's own history, and where the coin sits against the rest of the market. Stretched positioning has a measurable record. Coins with all three gauges running hot have trailed the median coin over the following 30 days about 58% of the time, out of sample and replicated on a separate set of 147 coins.
+**Pressure Read.** For every coin in your book: crowd activity, leverage (perpetual funding) and coin-specific volatility, each measured against the coin's own history, and where the coin sits against the rest of the market. Pressure has a measurable record. Coins with all three gauges running hot have trailed the median coin over the following 30 days about 58% of the time, out of sample and replicated on a separate set of 147 coins.
 
-**Allocation Read.** For a recurring buy or sell, whether retail DCA or treasury distribution: how this period's allocation splits under a backtested positioning rule versus an equal split, and how that rule has performed against an equal split, year by year. Buying and selling are mirror images: buys lean toward cooler coins, sells toward hotter ones.
+**Allocation Read.** For a recurring buy or sell, whether retail DCA or treasury distribution: how this period's allocation splits under a backtested pressure rule versus an equal split, and how that rule has performed against an equal split, year by year. Buying and selling are mirror images: buys lean toward coins under less pressure, sells toward coins under more.
 
-**Depth on demand.** When the question becomes *why*, your agent goes further into the engine, still in plain language: the readings driving a coin, setups firing or close to firing with their evidence tier, the market regime, and backtests of your own ideas.
+**Notable Read and depth on demand.** When the question becomes *why*, your agent goes further into the engine, still in plain language: the readings furthest from each coin's own norm, setups firing or close to firing with their evidence tier and track record, and backtests of your own ideas.
 
 ## Connect
 
-Remote MCP: `https://mcp.cryptyx.ai/api/mcp`. Sign in through your client's OAuth flow. Positioning Read, Allocation Read, coverage and data-freshness reads are free with daily limits. The full engine is on Pro.
+Remote MCP: `https://mcp.cryptyx.ai/api/mcp`. Sign in through your client's OAuth flow. Pressure Read, Allocation Read, Notable Read, coverage and data-freshness reads are free with daily limits. The full engine is on Pro.
 
 Then ask:
 
-- "Read positioning across ETH, SOL and DOGE. Where is it stretched?"
+- "Where is pressure building across ETH, SOL and DOGE?"
 - "I accumulate ETH, SOL and AVAX weekly. What does the evidence say about this week's allocation?"
-- "Pull my Coinbase holdings and read positioning across the book."
-- "I'm distributing a SOL position over 12 weeks. How has a positioning-weighted schedule compared with equal tranches?"
+- "Pull my Coinbase holdings and run a Pressure Read across the book."
+- "I'm distributing a SOL position over 12 weeks. How has a pressure-weighted schedule compared with equal tranches?"
 
 ## Skills
 
 | Skill | Purpose |
 | --- | --- |
 | [cryptyx](skills/cryptyx/SKILL.md) | Entry point: routes each question and keeps the first answer sharp |
-| [cryptyx-holdings](skills/cryptyx-holdings/SKILL.md) | Positioning Read and Allocation Read across a book or watchlist |
-| [cryptyx-investigate](skills/cryptyx-investigate/SKILL.md) | Depth on demand: drivers, setups, regime, backtests |
+| [cryptyx-holdings](skills/cryptyx-holdings/SKILL.md) | Pressure Read and Allocation Read across a book or watchlist |
+| [cryptyx-investigate](skills/cryptyx-investigate/SKILL.md) | Notable Read and depth on demand: drivers, setups, backtests |
 | [cryptyx-exchange-bridge](skills/cryptyx-exchange-bridge/SKILL.md) | Reads holdings from an exchange connection; symbols only |
 
 ## Packages
