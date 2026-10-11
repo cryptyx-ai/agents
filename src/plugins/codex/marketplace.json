@@ -1,0 +1,12 @@
+{
+  "name": "cryptyx-agents",
+  "interface": { "displayName": "CRYPTYX Agents" },
+  "plugins": [
+    {
+      "name": "cryptyx",
+      "source": { "source": "local", "path": "./plugins/cryptyx" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

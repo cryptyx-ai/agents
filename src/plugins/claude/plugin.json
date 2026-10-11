@@ -1,0 +1,13 @@
+{
+  "name": "cryptyx",
+  "version": "0.1.0",
+  "description": "CRYPTYX market evidence for agents: which coins are running hot or cool, how a tested rule splits a DCA, and deeper investigation on request. Works alongside exchange connections; only coin symbols are shared.",
+  "author": { "name": "CRYPTYX" },
+  "homepage": "https://cryptyx.ai/docs/mcp",
+  "repository": "https://github.com/cryptyx-ai/agents",
+  "license": "MIT",
+  "skills": "./skills/",
+  "mcpServers": {
+    "cryptyx": { "type": "http", "url": "https://mcp.cryptyx.ai/api/mcp" }
+  }
+}
