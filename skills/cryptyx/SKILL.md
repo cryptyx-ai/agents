@@ -1,36 +1,36 @@
 ---
 name: cryptyx
-description: Route crypto questions to CRYPTYX market evidence. Use when the user names coins, mentions their holdings, watchlist or a DCA (recurring buy or sell), or asks whether coins are running hot, crowded or calm. Starts simple and goes deeper only when the user asks.
+description: Ground crypto decisions in CRYPTYX intelligence. Use when the user names coins, mentions their book, watchlist or a recurring buy or sell, or asks whether to add, trim or hold. Routes to the Positioning Read, the Allocation Read, or deeper engine reads, and keeps the first answer sharp.
 ---
 
 # CRYPTYX
 
-CRYPTYX reads the crypto market every day across about 190 coins and returns deterministic numbers from a live database. This skill picks the right starting point for the user's question and keeps the first answer simple.
+CRYPTYX is the intelligence layer for digital assets: 670+ metrics across about 190 coins, scored daily against each coin's own history, with rules pre-registered and backtested out of sample. It returns deterministic numbers from a live database. This skill routes each question to the right read and keeps the first answer sharp.
 
-Remote MCP: `https://mcp.cryptyx.ai/api/mcp` (OAuth sign-in through the user's client). Free accounts can use the tools marked *free* below, with daily limits.
+Remote MCP: `https://mcp.cryptyx.ai/api/mcp` (OAuth sign-in through the user's client). Tools marked *free* work on free accounts, with daily limits.
 
-## Pick the starting point
+## Route the question
 
-| The user… | Start with | Skill |
-| --- | --- | --- |
-| Names one or a few coins ("is SOL overheated?", "compare ETH and AVAX") | `get_heat_check` *(free)* | [cryptyx-holdings](../cryptyx-holdings/SKILL.md) |
-| Mentions their holdings or portfolio | Read holdings with their exchange tool, then `get_heat_check` | [cryptyx-exchange-bridge](../cryptyx-exchange-bridge/SKILL.md) |
-| Mentions a DCA or recurring buys/sells | `check_dca` *(free)* | [cryptyx-holdings](../cryptyx-holdings/SKILL.md) |
-| Asks why a coin reads the way it does, or wants to test an idea | Depends on the question | [cryptyx-investigate](../cryptyx-investigate/SKILL.md) |
-| Asks what CRYPTYX can do | `get_cryptyx_overview` *(free)* | — |
+| The user… | Read | Tool | Skill |
+| --- | --- | --- | --- |
+| Names coins: "where is positioning stretched?", "compare ETH and AVAX" | Positioning Read | `get_heat_check` *(free)* | [cryptyx-holdings](../cryptyx-holdings/SKILL.md) |
+| Refers to their book or holdings | Positioning Read on the book | Exchange read, then `get_heat_check` | [cryptyx-exchange-bridge](../cryptyx-exchange-bridge/SKILL.md) |
+| Runs a recurring buy or sell (DCA, treasury distribution) | Allocation Read | `check_dca` *(free)* | [cryptyx-holdings](../cryptyx-holdings/SKILL.md) |
+| Asks why, or wants to test an idea | Depth on demand | Depends on the question | [cryptyx-investigate](../cryptyx-investigate/SKILL.md) |
+| Asks what CRYPTYX can do | Overview | `get_cryptyx_overview` *(free)* | — |
 
-If unsure whether a coin is covered, call `check_coverage` *(free)* first. `get_data_liveness` *(free)* says when the data last updated.
+Unsure whether a coin is covered? Call `check_coverage` *(free)*. `get_data_liveness` *(free)* reports when each data source last updated.
 
 ## Depth follows the user
 
-1. **First answer: simple.** One or two numbers per coin in plain words, plus one offer to dig deeper. No signal names, metric codes or scores the user did not ask for.
-2. **Second answer: why.** Only when the user asks why, or asks for more.
-3. **Deeper: build and test.** Only when the user asks to test, backtest or monitor something.
+1. **First answer: sharp.** The read, one or two numbers per coin, one evidence line, one offer to go deeper.
+2. **Second answer: the drivers.** Only when the user asks why.
+3. **Further: build and test.** Only when the user asks to test, backtest or monitor.
 
 ## Ground rules
 
-- Every number comes from a tool response in this session. Do not estimate or fill gaps.
-- Report what the data shows and what happened historically. Do not tell the user to buy, sell, add or trim; they decide.
+- Every number comes from a tool response in this session. Never estimate or fill gaps.
+- Present the evidence and its record. The user makes the call to add, trim or hold.
 - Send coin symbols only. Never send balances, position sizes or account identifiers to CRYPTYX.
 - Keep each tool's disclaimer when quoting its evidence.
-- If a tool says a coin is not covered, say so plainly.
+- If a coin is not covered, say so plainly.

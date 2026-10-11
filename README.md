@@ -1,31 +1,44 @@
-# CRYPTYX Agents
+# CRYPTYX for Agents
 
-Skills and an MCP connection that give AI agents CRYPTYX market evidence: which coins are running hot or cool, how a tested rule would split a DCA, and deeper investigation when the user asks for it.
+**Your agent can see your portfolio and place the trade. CRYPTYX gives it the intelligence to make the call.**
 
-It is built to sit next to an exchange connection the user already has (Coinbase, Kraken, Binance, Hyperliquid). The agent reads holdings from the exchange, sends only coin symbols to CRYPTYX, and leaves any order to the exchange's own approval flow.
+An agent connected to Coinbase, Kraken, Binance or Hyperliquid knows what you hold. It doesn't know whether the crowd is piling into those coins, whether leverage is building underneath them, or whether the rule you're about to follow has ever worked. CRYPTYX does.
 
-## Remote MCP
+670+ metrics across ~190 digital assets, scored every day against each asset's own history. Rules are pre-registered and backtested out of sample before a single result is quoted. Your agent reads the evidence, you make the decision, and the exchange executes it.
 
-`https://mcp.cryptyx.ai/api/mcp`. Sign in through your client's OAuth flow. Free accounts can run heat checks, DCA checks, coverage and data-freshness reads with daily limits. Deeper tools need a Pro account.
+**Add, trim, hold, or how to split this week's accumulation: grounded in numbers, not narrative.**
 
-After connecting, try:
+## What your agent gets
 
-- "Run a heat check on ETH, SOL and DOGE."
-- "I DCA weekly into ETH, SOL and AVAX. Run a DCA check."
-- "Read my Coinbase balances and heat check what I hold." (needs a Coinbase connection too)
+**Positioning Read.** For every coin in your book: crowd, leverage and volatility, each measured against the coin's own history, and where the coin sits against the rest of the market. Stretched positioning has a measurable record. Coins with all three gauges running hot have trailed the median coin over the following 30 days about 58% of the time, out of sample and replicated on a separate set of 147 coins.
+
+**Allocation Read.** For a recurring buy or sell, whether retail DCA or treasury distribution: how this period's allocation splits under a backtested positioning rule versus an equal split, and how that rule has performed against an equal split, year by year. Buying and selling are mirror images: buys lean toward cooler coins, sells toward hotter ones.
+
+**Depth on demand.** When the question becomes *why*, your agent goes further into the engine, still in plain language: the readings driving a coin, setups firing or close to firing with their evidence tier, the market regime, and backtests of your own ideas.
+
+## Connect
+
+Remote MCP: `https://mcp.cryptyx.ai/api/mcp`. Sign in through your client's OAuth flow. Positioning Read, Allocation Read, coverage and data-freshness reads are free with daily limits. The full engine is on Pro.
+
+Then ask:
+
+- "Read positioning across ETH, SOL and DOGE. Where is it stretched?"
+- "I accumulate ETH, SOL and AVAX weekly. What does the evidence say about this week's allocation?"
+- "Pull my Coinbase holdings and read positioning across the book."
+- "I'm distributing a SOL position over 12 weeks. How has a positioning-weighted schedule compared with equal tranches?"
 
 ## Skills
 
 | Skill | Purpose |
 | --- | --- |
-| [cryptyx](skills/cryptyx/SKILL.md) | Start here: picks the right tool and keeps the first answer simple |
-| [cryptyx-holdings](skills/cryptyx-holdings/SKILL.md) | Heat check and DCA check on a set of coins |
-| [cryptyx-investigate](skills/cryptyx-investigate/SKILL.md) | Going deeper: what's driving a reading, setups, backtests |
-| [cryptyx-exchange-bridge](skills/cryptyx-exchange-bridge/SKILL.md) | Reading holdings from an exchange connection, symbols only |
+| [cryptyx](skills/cryptyx/SKILL.md) | Entry point: routes each question and keeps the first answer sharp |
+| [cryptyx-holdings](skills/cryptyx-holdings/SKILL.md) | Positioning Read and Allocation Read across a book or watchlist |
+| [cryptyx-investigate](skills/cryptyx-investigate/SKILL.md) | Depth on demand: drivers, setups, regime, backtests |
+| [cryptyx-exchange-bridge](skills/cryptyx-exchange-bridge/SKILL.md) | Reads holdings from an exchange connection; symbols only |
 
 ## Packages
 
-Run `python3 scripts/build-distributions.py dist` to build three packages under `dist/packages/`, with a `SHA256SUMS` file:
+`python3 scripts/build-distributions.py dist` builds three packages under `dist/packages/`, with a `SHA256SUMS` file:
 
 - `cryptyx-agent-plugin-vX.Y.Z`: portable [Agent Plugins 1.0.0](https://agent-plugins.org/) package (Cursor, Hermes and other compatible clients).
 - `cryptyx-claude-vX.Y.Z`: Claude Code package (also readable by Grok Build).
@@ -35,7 +48,7 @@ Claude Code: `claude --plugin-dir "$PWD"` from the extracted Claude package, the
 
 ## Privacy
 
-CRYPTYX receives coin symbols, never balances, position sizes or account identifiers. Requests for coins CRYPTYX does not cover yet are counted per symbol and day, with no personal data, to decide which coins to add next.
+CRYPTYX receives coin symbols only, never balances, position sizes or account identifiers. Requests for coins not yet covered are counted per symbol and day, with no personal data, to decide which coins to add next.
 
 ## Legal notice
 

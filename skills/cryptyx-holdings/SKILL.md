@@ -1,43 +1,45 @@
 ---
 name: cryptyx-holdings
-description: Check a set of coins (holdings, a watchlist or a DCA) with CRYPTYX - which are running hot or cool, and for a DCA, how a tested rule would split this period and what that rule did historically. Use for "heat check my coins", "check my DCA", "should I add or trim" style questions. Answers stay simple.
+description: Positioning Read and Allocation Read across a set of coins (a book, a watchlist, or the coins in a recurring buy or sell). Use for "where is positioning stretched", "what does the evidence say about this week's allocation", "should I add or trim" style questions. Quantitative, backtested, concise.
 ---
 
-# CRYPTYX holdings check
+# CRYPTYX: Positioning Read and Allocation Read
 
 Follow the [CRYPTYX router](../cryptyx/SKILL.md). If the coins come from an exchange account, read them first with the [exchange bridge](../cryptyx-exchange-bridge/SKILL.md).
 
-## Heat check (any set of coins)
+## Positioning Read (any set of coins)
 
-Call `get_heat_check` with 1–25 symbols. Each coin gets three gauges and a heat score from 0 to 3:
+Tool: `get_heat_check` with 1–25 symbols. Present the result as the **Positioning Read**. Each coin gets three gauges, each measured against the coin's own history, and a positioning score from 0 to 3:
 
-- **Crowd heat**: is trading volume running high against the coin's own history?
-- **Leverage heat**: is futures funding running high?
-- **Volatility heat**: is the coin swinging more than usual on its own?
+- **Crowd**: is trading volume running hot?
+- **Leverage**: is futures funding running hot?
+- **Volatility**: is the coin swinging more than usual on its own?
 
-How to answer:
+How to present it:
 
-- Lead with a short table: coin, heat score, label. Sort hottest first.
-- Add one line from the tool's `evidence.headline`. For example: coins with all 3 gauges hot have lagged the median coin over the next 30 days about 58% of the time.
-- This is a comparison with other coins, not a price forecast. Say so when quoting it.
+- Lead with a table, most stretched first: coin, score (0–3), label.
+- Add the one evidence line the tool returns (`evidence.headline`). For example, coins with all three gauges hot have trailed the median coin over the next 30 days about 58% of the time, out of sample.
+- State that this measures relative positioning against other coins, not a price forecast.
 - List coins without a score separately, with the tool's reason.
-- Offer one next step, such as "Want to see what's driving SOL's heat?"
+- Close with one offer to go deeper, such as "Want the readings driving SOL?"
 
-## DCA check (recurring buys or sells)
+## Allocation Read (recurring buys or sells)
 
-Call `check_dca` with the coins in the DCA, and `side: "sell"` for a selling program. The tool returns:
+Tool: `check_dca` with the coins in the program, and `side: "sell"` for distribution. Present the result as the **Allocation Read**. Buying and selling are mirror images: buys lean toward cooler coins and sells toward hotter ones, under one backtested positioning rule.
 
-- each coin's heat score;
-- `this_period.split`: how $100 of this period's buy or sell divides with an equal split and with the tested rule;
-- `evidence`: the rule's history against an equal split. This includes the extra value per period 30 days later, on two coin sets, for 2024–2026, plus year-by-year values and a one-line summary.
+The tool returns:
 
-How to answer:
+- each coin's positioning score;
+- `this_period.split`: how $100 of this period's buy or sell allocates, equal split versus the rule;
+- `evidence`: how the rule performed against an equal split. This includes the extra value per period 30 days later on two coin sets (2024–2026, out of sample), year-by-year values, and a one-line summary.
+
+How to present it:
 
 - Show the split table: coin, equal, rule.
-- Quote `evidence.summary` and the uplift numbers as percentages of each period's amount, with `evidence.note`.
-- The rule is one tested approach, not a recommendation. Do not tell the user to change their DCA. If they ask "should I…", give them the numbers and the history, and say the choice is theirs.
-- Offer: "Want the year-by-year results?" or "Want to see what's driving the hottest coin?"
+- Quote `evidence.summary` and the uplift as a percentage of each period's amount, with `evidence.note`.
+- The rule is one tested approach. If the user asks "should I…", give them the numbers and the record, and say the decision is theirs.
+- Close with one offer, such as "Want the year-by-year record?"
 
-## Keep it simple
+## Register
 
-Retail users want a clear read, not a research report. Keep to one table, one evidence line and one offer. Go deeper only when the user asks; see [cryptyx-investigate](../cryptyx-investigate/SKILL.md).
+Concise and quantitative. One table, one evidence line, one offer. No jargon or codes the user did not ask for. Go deeper only on request; see [cryptyx-investigate](../cryptyx-investigate/SKILL.md).

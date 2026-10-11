@@ -11,7 +11,7 @@ Follow the [CRYPTYX router](../cryptyx/SKILL.md). This skill connects two tools 
 
 1. **Read holdings on the exchange.** Use the exchange's read-only balance or portfolio tool. See the reference for the exchange below. Follow that exchange's own skill and approval rules. Reading balances does not authorise any trade.
 2. **Extract symbols.** Keep the coin symbols with a non-zero balance. Drop stablecoins and fiat (USD, USDC, USDT, EUR and so on). Do not pass amounts.
-3. **Ask CRYPTYX.** Use `get_heat_check` with the symbols. If the user mentions a recurring buy or sell, use `check_dca` instead. Follow [cryptyx-holdings](../cryptyx-holdings/SKILL.md) for the answer.
+3. **Ask CRYPTYX.** Run the Positioning Read (`get_heat_check`) on the symbols, or the Allocation Read (`check_dca`) for a recurring buy or sell. Follow [cryptyx-holdings](../cryptyx-holdings/SKILL.md) for the answer.
 4. **Orders stay with the exchange.** If the user decides to place, change or cancel an order, use the exchange's own trading skill and approval flow. CRYPTYX evidence is not an approval.
 
 ## Privacy
