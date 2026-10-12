@@ -21,7 +21,7 @@ How to present it:
 - One short block per coin: what stands out, then any setups.
 - For a setup, quote its hit rate against the base rate and the episode count, and pass on its `evidence_note` in plain words. A **pooled record** combines every past episode across the coins the setup applies to (for example BTC, ETH and SOL), each measured on its own history. That gives more episodes and a steadier read, but the record is not specific to the coin in question. Say so.
 - Offer the coin's first `next_questions` item.
-- What changed: each reading carries `then` (its tag `compared_with` days earlier). Setups carry `new_since`, and `no_longer_active` lists setups that have dropped off. Mention a reading only when its tag moved ("very high, normal a week ago"), and new or ended setups in one line each.
+- What changed: each reading carries `then` (its z-score and tag on the `compared_with` day). Setups carry `new_since`, and `no_longer_active` lists setups that have dropped off. Mention a reading only when its tag moved ("very high, normal a week ago"), and new or ended setups in one line each.
 
 ## Going further
 
