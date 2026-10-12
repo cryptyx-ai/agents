@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0
+
+- Journey re-centred on THE STUDY (`get_coin_study`): two-horizon read per coin, what followed similar readings in the coin's history (7/30/90 days, listed as history), setups firing or close to firing, what changed. Multi-coin scan via `get_heat_check`.
+- Retired the cross-coin allocation read and the invented read names; describe, never prescribe.
+
 ## 0.2.0
 
 - Recurring checks lead with what changed: every Pressure, Allocation and Notable Read carries a `changes` block (default 7 days back), and the skills tell agents to open with it.

@@ -2,38 +2,40 @@
 
 **Your agent can see your portfolio and place the trade. CRYPTYX gives it the intelligence to make the call.**
 
-An agent connected to Coinbase, Kraken, Binance or Hyperliquid knows what you hold. It doesn't know whether the crowd is piling into those coins, whether leverage is building underneath them, or whether the rule you're about to follow has ever worked. CRYPTYX does.
+An agent connected to Coinbase, Kraken, Binance or Hyperliquid knows what you hold. It doesn't know whether the crowd is piling into those coins, whether leverage is building underneath them, or how moments like this have played out before. CRYPTYX does.
 
-670+ metrics across ~190 digital assets, scored every day against each asset's own history. Rules are pre-registered and backtested out of sample before a single result is quoted. Your agent reads the evidence, you make the decision, and the exchange executes it.
+669 metrics across ~190 digital assets, scored every day against each coin's own history and the market. Setups are tested before they are shown, and history is labelled as history. Your agent reads the evidence, you make the decision, and the exchange executes it.
 
-**Add, trim, hold, or how to split this week's accumulation: grounded in numbers, not narrative.**
+**Add, trim or hold: grounded in numbers, not narrative.**
 
 ## What your agent gets
 
-**Pressure Read.** For every coin in your book: crowd activity, leverage (perpetual funding) and coin-specific volatility, each measured against the coin's own history, and where the coin sits against the rest of the market. Pressure has a measurable record. Coins with all three gauges running hot have trailed the median coin over the following 30 days about 58% of the time, out of sample and replicated on a separate set of 147 coins.
+**THE STUDY, for every coin you hold.** Where the coin stands on two horizons, tactical (7–14 days) and structural (60–180 days), across trend, volatility, flow, futures, options, order book and correlation. Every reading carries its z-score and where today sits in the coin's own history and against the rest of the market.
 
-**Allocation Read.** For a recurring buy or sell, whether retail DCA or treasury distribution: how this period's allocation splits under a backtested pressure rule versus an equal split, and how that rule has performed against an equal split, year by year. Buying and selling are mirror images: buys lean toward coins under less pressure, sells toward coins under more.
+**What happened last time.** For each reading that is unusually stretched, the coin's past episodes at least as extreme, and what followed over the next 7, 30 and 90 days, set against the coin's normal returns. Presented as history, with the number of episodes, never as a forecast.
 
-**Notable Read and depth on demand.** When the question becomes *why*, your agent goes further into the engine, still in plain language: the readings furthest from each coin's own norm, setups firing or close to firing with their evidence tier and track record, and backtests of your own ideas.
+**Setups firing, or close to it.** Multi-metric setups from the CRYPTYX catalogue that are live or near-live on the coin, with their evidence tier and track record. Only setups that clear the evidence bar are shown.
+
+**What changed.** Re-run the same check next week and your agent opens with what moved: gauges that flipped, readings that turned, setups that appeared or dropped off.
 
 ## Connect
 
-Remote MCP: `https://mcp.cryptyx.ai/api/mcp`. Sign in through your client's OAuth flow. Pressure Read, Allocation Read, Notable Read, coverage and data-freshness reads are free with daily limits. The full engine is on Pro.
+Remote MCP: `https://mcp.cryptyx.ai/api/mcp`. Sign in through your client's OAuth flow. THE STUDY, the multi-coin scan, coverage and data-freshness reads are free with daily limits. The full engine is on Pro.
 
 Then ask:
 
-- "Where is pressure building across ETH, SOL and DOGE?"
-- "I accumulate ETH, SOL and AVAX weekly. What does the evidence say about this week's allocation?"
-- "Pull my Coinbase holdings and run a Pressure Read across the book."
-- "I'm distributing a SOL position over 12 weeks. How has a pressure-weighted schedule compared with equal tranches?"
+- "Run THE STUDY on SOL. Where is it stretched, and what followed the last times it looked like this?"
+- "Pull my Coinbase holdings. Which of my coins stand out, and why?"
+- "Scan ETH, SOL and DOGE. What changed since last week?"
+- "Is any setup close to firing on AVAX? How has it played out before?"
 
 ## Skills
 
 | Skill | Purpose |
 | --- | --- |
 | [cryptyx](skills/cryptyx/SKILL.md) | Entry point: routes each question and keeps the first answer sharp |
-| [cryptyx-holdings](skills/cryptyx-holdings/SKILL.md) | Pressure Read and Allocation Read across a book or watchlist |
-| [cryptyx-investigate](skills/cryptyx-investigate/SKILL.md) | Notable Read and depth on demand: drivers, setups, backtests |
+| [cryptyx-holdings](skills/cryptyx-holdings/SKILL.md) | THE STUDY on each coin you hold or watch, plus a quick scan |
+| [cryptyx-investigate](skills/cryptyx-investigate/SKILL.md) | Going deeper: what else stands out, setup records, backtests |
 | [cryptyx-exchange-bridge](skills/cryptyx-exchange-bridge/SKILL.md) | Reads holdings from an exchange connection; symbols only |
 
 ## Install

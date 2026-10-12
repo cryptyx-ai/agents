@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cryptyx",
-  "version": "0.2.0",
-  "description": "The intelligence layer for digital assets, for your agent: Pressure, Allocation and Notable Reads across your book, backtested and out of sample, with the full engine on demand. Works alongside exchange connections; only coin symbols are shared.",
+  "version": "0.3.0",
+  "description": "The intelligence layer for digital assets, for your agent: THE STUDY on every coin you hold, with what followed similar moments in each coin's history and the setups firing on it. Works alongside exchange connections; only coin symbols are shared.",
   "author": { "name": "CRYPTYX" },
   "homepage": "https://cryptyx.ai/docs/mcp",
   "repository": "https://github.com/cryptyx-ai/agents",
