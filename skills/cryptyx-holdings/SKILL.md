@@ -40,6 +40,15 @@ How to present it:
 - The rule is one tested approach. If the user asks "should I…", give them the numbers and the record, and say the decision is theirs.
 - Close with one offer, such as "Want the year-by-year record?"
 
+## Recurring checks: lead with what changed
+
+Every read includes a `changes` block comparing the same coins with 7 days earlier (`compare_days` sets another window; 0 turns it off).
+
+- **Pressure Read:** `changes.changed` lists coins whose score or gauge labels moved, with a one-line `summary` each and any crossing into or out of overheated listed first. `changes.unchanged` lists the rest.
+- **Allocation Read:** `changes.split_shift` shows how each coin's share of $100 moved, largest shifts first.
+
+When the user runs the same check on a schedule ("every Monday"), open with the changes ("Since last week: SOL moved into overheated; its share of the buy fell from 37.5 to 20"), then the current table. If nothing changed, say so in one line.
+
 ## Register
 
 Concise and quantitative. One table, one evidence line, one offer. No jargon or codes the user did not ask for. Go deeper only on request; see [cryptyx-investigate](../cryptyx-investigate/SKILL.md).
