@@ -23,6 +23,8 @@ Follow the [CRYPTYX router](../cryptyx/SKILL.md). Use this skill after the first
 | Did readings like this lead anywhere before? | `evaluate_custom_trigger` or `backtest_signal` *(Pro)* | Show sample size and the range of outcomes, not only the average. Flag small samples. |
 | What's the market backdrop? | `get_regime_analysis` *(Pro)* | Present it as context, not as a call. |
 
+To test or build an idea of their own, go to [cryptyx-build-setup](../cryptyx-build-setup/SKILL.md).
+
 ## Register
 
 - Answer the question asked, then offer one further step.

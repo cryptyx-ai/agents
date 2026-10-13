@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0
+
+- New skill `cryptyx-build-setup`: the deep path from one reading to a multi-factor, multi-horizon setup or signal of the user's own (readings → conditions → setups → signals), reported with the full analytics: episodes, returns, hit rate and Sharpe against the coin's base rate, drawdowns, every horizon, and warnings.
+- Router and investigate skills route "test my own idea" questions to it.
+
 ## 0.3.0
 
 - Journey re-centred on THE STUDY (`get_coin_study`): two-horizon read per coin, what followed similar readings in the coin's history (7/30/90 days, listed as history), setups firing or close to firing, what changed. Multi-coin scan via `get_heat_check`.

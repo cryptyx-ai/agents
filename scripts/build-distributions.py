@@ -22,7 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 MCP_URL = "https://mcp.cryptyx.ai/api/mcp"
-SKILLS = ("cryptyx", "cryptyx-exchange-bridge", "cryptyx-holdings", "cryptyx-investigate")
+SKILLS = ("cryptyx", "cryptyx-build-setup", "cryptyx-exchange-bridge", "cryptyx-holdings", "cryptyx-investigate")
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 LINK_RE = re.compile(r"\]\(([^)#]+)(?:#[^)]*)?\)")
 
