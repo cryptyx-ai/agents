@@ -36,6 +36,7 @@ Then ask:
 | [cryptyx](skills/cryptyx/SKILL.md) | Entry point: routes each question and keeps the first answer sharp |
 | [cryptyx-holdings](skills/cryptyx-holdings/SKILL.md) | THE STUDY on each coin you hold or watch, plus a quick scan |
 | [cryptyx-investigate](skills/cryptyx-investigate/SKILL.md) | Going deeper: what else stands out, setup records, backtests |
+| [cryptyx-build-setup](skills/cryptyx-build-setup/SKILL.md) | Test your own idea: from one reading to a multi-factor, multi-horizon setup, with episodes, hit rate, drawdowns and the base rate |
 | [cryptyx-exchange-bridge](skills/cryptyx-exchange-bridge/SKILL.md) | Reads holdings from an exchange connection; symbols only |
 
 ## Install

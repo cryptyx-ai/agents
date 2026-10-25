@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1
+
+- README lists all five skills (adds `cryptyx-build-setup`, shipped in 0.4.0).
+
 ## 0.4.0
 
 - New skill `cryptyx-build-setup`: the deep path from one reading to a multi-factor, multi-horizon setup or signal of the user's own (readings → conditions → setups → signals), reported with the full analytics: episodes, returns, hit rate and Sharpe against the coin's base rate, drawdowns, every horizon, and warnings.
