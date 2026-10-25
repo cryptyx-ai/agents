@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.0
+
+- One CRYPTYX on every surface: the README, plugin descriptions and router skill use the same positioning as the remote MCP server ("Sharpen your edge. Feed your agent the CRYPTYX quant engine."; institutional-grade quantitative intelligence, in plain English or all the way down).
+- The router routes by goal: accumulate, take profit, trade short-term, catch statistically significant shifts, hold long-term, build and test strategies. Each goal has a first prompt and one next step.
+- Horizons: all 8 (1–365 days) named, with groupings suggested rather than imposed.
+- Removed advice-style copy ("add, trim or hold").
+
 ## 0.4.1
 
 - README lists all five skills (adds `cryptyx-build-setup`, shipped in 0.4.0).

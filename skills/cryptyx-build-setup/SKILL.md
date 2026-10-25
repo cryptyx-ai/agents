@@ -13,7 +13,7 @@ CRYPTYX is modular. Each layer is built from the one below, and the user can ent
 
 | Layer | What it is | Example |
 | --- | --- | --- |
-| **Readings** | 669 metrics across eight factor families: trend, trend efficiency, volatility, flows, futures positioning, order book, options and correlation. Each is scored daily as a z-score against the coin's own history and ranked against the market. | 60-day trend efficiency at +1.8σ |
+| **Readings** | 670+ metrics across eight factor families: trend, trend efficiency, volatility, flows, futures positioning, order book, options and correlation. Each is scored daily as a z-score against the coin's own history and ranked against the market. | 60-day trend efficiency at +1.8σ |
 | **Horizons** | The same factor measured over several windows, from days to a year. Tactical readings (7–14 days) and structural readings (60–180 days) answer different questions; keep them separate and never blend them. | Volatility over 7 days vs over 90 days |
 | **Conditions** | A threshold on a reading, or the gap between two readings (for example a short window against a long one). | Funding below −1σ |
 | **Setups** | Two to four conditions across different factor families holding at once. Most of the engine's depth is here: one reading alone is often noise. | Trend efficiency high AND funding negative |

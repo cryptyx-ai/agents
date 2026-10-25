@@ -1,40 +1,42 @@
 # CRYPTYX for Agents
 
-**Your agent can see your portfolio and place the trade. CRYPTYX gives it the intelligence to make the call.**
+**CRYPTYX — Digital Asset Intelligence. Sharpen your edge. Feed your agent the CRYPTYX quant engine.**
 
-An agent connected to Coinbase, Kraken, Binance or Hyperliquid knows what you hold. It doesn't know whether the crowd is piling into those coins, whether leverage is building underneath them, or how moments like this have played out before. CRYPTYX does.
+Institutional-grade quantitative intelligence for digital assets. Ask about any coin in plain English, or go all the way down: scan the market, build and backtest your own strategies.
 
-669 metrics across ~190 digital assets, scored every day against each coin's own history and the market. Setups are tested before they are shown, and history is labelled as history. Your agent reads the evidence, you make the decision, and the exchange executes it.
+Whether you're trading short-term, accumulating over months, taking profit into strength or watching for a statistically significant shift, CRYPTYX gives your agent the numbers behind the call. It's a multi-factor, multi-horizon quant engine: 670+ metrics across 8 factor classes for 200+ coins, each read on 8 horizons from 1 to 365 days, with 5+ years of daily history. Ask about any coin in plain English and see what followed similar moments before. Or go deeper: 150 multi-factor setups and 160 signals with their track records, market-wide scans, and backtests of your own strategies. Your agent reads the intelligence; your rules decide; your exchange executes.
 
-**Add, trim or hold: grounded in numbers, not narrative.**
+## Start with a goal
 
-## What your agent gets
+| Goal | Ask your agent |
+| --- | --- |
+| **Accumulate** with a rule, not a hunch | "My rule: add to ETH only when it's statistically oversold vs its 1-year history. Where is it now, and what followed the last times?" |
+| **Take profit** when the data says stretched | "Is BTC stretched on the 90- and 180-day horizons? What happened after similar readings?" |
+| **Trade short-term** with sharper entries and exits | "Which of ETH, SOL and DOGE have short-term momentum, and what changed this week?" |
+| **Catch statistically significant shifts** | "Which coins just had a statistically significant volatility expansion or trend breakout?" |
+| **Hold long-term** on the right side of the trend | "Where are BTC and ETH on the 90-, 180- and 365-day horizons?" |
+| **Build and test strategies** | "Find coins that are oversold vs their 90-day history with an improving trend, then backtest that combination." |
 
-**THE STUDY, for every coin you hold.** Where the coin stands on two horizons, tactical (7–14 days) and structural (60–180 days), across trend, volatility, flow, futures, options, order book and correlation. Every reading carries its z-score and where today sits in the coin's own history and against the rest of the market.
+Every answer ends with one next step: a recheck your agent can schedule, or one level deeper. You own the rules; CRYPTYX evaluates the conditions and shows what followed before, with sample sizes and base rates.
 
-**What happened last time.** For each reading that is unusually stretched, the coin's past episodes at least as extreme, and what followed over the next 7, 30 and 90 days, set against the coin's normal returns. Presented as history, with the number of episodes, never as a forecast.
+## What's under the hood
 
-**Setups firing, or close to it.** Multi-metric setups from the CRYPTYX catalogue that are live or near-live on the coin, with their evidence tier and track record. Only setups that clear the evidence bar are shown.
-
-**What changed.** Re-run the same check next week and your agent opens with what moved: gauges that flipped, readings that turned, setups that appeared or dropped off.
+- **Coin intelligence:** one coin or a basket on every horizon, vs its own history and the market, with what followed similar readings.
+- **Market scan and rankings:** scan 200+ coins for a condition; rank by factor class.
+- **Setups and signals:** trend and momentum, mean reversion, volatility compression and expansion, capitulation, breakouts, each with its track record and evidence tier.
+- **Strategy research and backtesting:** single metrics, multi-factor combinations, cross-horizon gaps and signal variants on 5+ years, every horizon vs the base rate.
+- **Shifts and risk context:** statistically significant shifts by factor class, divergences between factors, liquidity.
 
 ## Connect
 
-Remote MCP: `https://mcp.cryptyx.ai/api/mcp`. Sign in through your client's OAuth flow. THE STUDY, the multi-coin scan, coverage and data-freshness reads are free with daily limits. The full engine is on Pro.
-
-Then ask:
-
-- "Run THE STUDY on SOL. Where is it stretched, and what followed the last times it looked like this?"
-- "Pull my Coinbase holdings. Which of my coins stand out, and why?"
-- "Scan ETH, SOL and DOGE. What changed since last week?"
-- "Is any setup close to firing on AVAX? How has it played out before?"
+Remote MCP: `https://mcp.cryptyx.ai/api/mcp`. Sign in through your client's OAuth flow. Coin study, quick scan, notable read, coverage and data freshness are free with daily limits; the full engine is on Pro.
 
 ## Skills
 
 | Skill | Purpose |
 | --- | --- |
-| [cryptyx](skills/cryptyx/SKILL.md) | Entry point: routes each question and keeps the first answer sharp |
-| [cryptyx-holdings](skills/cryptyx-holdings/SKILL.md) | THE STUDY on each coin you hold or watch, plus a quick scan |
+| [cryptyx](skills/cryptyx/SKILL.md) | Entry point: routes each question by the user's goal |
+| [cryptyx-holdings](skills/cryptyx-holdings/SKILL.md) | The coin study on each coin you hold or watch, plus a quick scan |
 | [cryptyx-investigate](skills/cryptyx-investigate/SKILL.md) | Going deeper: what else stands out, setup records, backtests |
 | [cryptyx-build-setup](skills/cryptyx-build-setup/SKILL.md) | Test your own idea: from one reading to a multi-factor, multi-horizon setup, with episodes, hit rate, drawdowns and the base rate |
 | [cryptyx-exchange-bridge](skills/cryptyx-exchange-bridge/SKILL.md) | Reads holdings from an exchange connection; symbols only |

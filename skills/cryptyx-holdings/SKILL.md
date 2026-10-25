@@ -1,6 +1,6 @@
 ---
 name: cryptyx-holdings
-description: THE STUDY for the coins a user holds or watches - where each coin stands on tactical (7-14 day) and structural (60-180 day) horizons, what followed similar readings in the coin's history, setups firing or close to firing, and what changed since last week. Use for "how do my coins look", "is SOL stretched", "what happened last time" questions.
+description: The coin study for the coins a user holds or watches - where each coin stands on its shorter and longer horizons, what followed similar readings in the coin's history, setups firing or close to firing, and what changed since last week. Use for "how do my coins look", "is SOL stretched", "what happened last time" questions.
 ---
 
 # CRYPTYX: THE STUDY on your coins

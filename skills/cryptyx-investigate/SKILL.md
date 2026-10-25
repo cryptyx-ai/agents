@@ -1,6 +1,6 @@
 ---
 name: cryptyx-investigate
-description: Going deeper after THE STUDY - what else stands out across a few coins, a setup's composition and track record, how one reading has moved over time, and testing an idea with a backtest or custom trigger. Use when the user asks "why", "what else", or wants to test something.
+description: Going deeper after the coin study - what else stands out across a few coins, a setup's composition and track record, how one reading has moved over time, and testing an idea with a backtest or custom trigger. Use when the user asks "why", "what else", or wants to test something.
 ---
 
 # CRYPTYX: going deeper
@@ -9,7 +9,7 @@ Follow the [CRYPTYX router](../cryptyx/SKILL.md). Use this skill after the first
 
 ## What else stands out
 
-`get_notable_read` with 1-10 symbols *(free, daily limit)* returns, per coin, the three readings furthest from the coin's own norm across all 669 metrics, each with a one-line summary (own-history and market percentile), plus setups firing or close to firing with their evidence tier, hit rate against the coin's base rate and an `evidence_note`. It also shows what changed since 7 days earlier.
+`get_notable_read` with 1-10 symbols *(free, daily limit)* returns, per coin, the three readings furthest from the coin's own norm across all 670+ metrics, each with a one-line summary (own-history and market percentile), plus setups firing or close to firing with their evidence tier, hit rate against the coin's base rate and an `evidence_note`. It also shows what changed since 7 days earlier.
 
 - A **pooled record** combines every past episode across the coins a setup applies to (for example BTC, ETH and SOL), each measured on its own history: more episodes and a steadier read, but not specific to one coin. Say so when quoting it.
 - Mention a reading's change only when its tag moved ("very high, normal a week ago").

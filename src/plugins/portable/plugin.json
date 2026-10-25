@@ -1,11 +1,19 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cryptyx",
-  "version": "0.4.1",
-  "description": "The intelligence layer for digital assets, for your agent: THE STUDY on every coin you hold, with what followed similar moments in each coin's history and the setups firing on it. Works alongside exchange connections; only coin symbols are shared.",
-  "author": { "name": "CRYPTYX" },
-  "homepage": "https://cryptyx.ai/docs/mcp",
+  "version": "0.5.0",
+  "description": "CRYPTYX — Digital Asset Intelligence. Institutional-grade quantitative intelligence for digital assets: ask about any coin in plain English, or scan the market and build and backtest your own strategies. 670+ metrics, 8 factor classes, 8 horizons (1–365 days), 200+ coins. Only coin symbols are shared.",
+  "author": {
+    "name": "CRYPTYX"
+  },
+  "homepage": "https://cryptyx.ai/docs/agents",
   "repository": "https://github.com/cryptyx-ai/agents",
   "license": "MIT",
-  "keywords": ["crypto", "mcp", "market-data", "dca", "research"]
+  "keywords": [
+    "crypto",
+    "mcp",
+    "market-data",
+    "dca",
+    "research"
+  ]
 }
