@@ -23,6 +23,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 MCP_URL = "https://mcp.cryptyx.ai/api/mcp"
 SKILLS = ("cryptyx", "cryptyx-build-setup", "cryptyx-exchange-bridge", "cryptyx-holdings", "cryptyx-investigate")
+# Tools the remote MCP connector lists (Release 1, cryptyx repo src/lib/mcp/connector-set.ts).
+# A skill naming any other tool would send the agent to a call the server refuses.
+CONNECTOR_TOOLS = {
+    "get_cryptyx_overview", "get_coin_study", "get_episode_study", "scan_metric_universe",
+    "analyze_metric", "analyze_metrics_composite", "get_price_history", "get_live_prices",
+    "get_data_liveness", "check_coverage", "get_featured_metrics",
+}
+TOOL_RE = re.compile(r"`((?:get|scan|analyze|check|evaluate|backtest|simulate|fork|search)_[a-z0-9_]+)`")
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 LINK_RE = re.compile(r"\]\(([^)#]+)(?:#[^)]*)?\)")
 
@@ -85,6 +93,9 @@ def validate_sources() -> str:
         if not m or m.group(1) != name or not NAME_RE.match(name):
             fail(f"bad frontmatter in {md}")
         for doc in [md, *sorted((md.parent / "references").glob("*.md"))]:
+            unknown = sorted(set(TOOL_RE.findall(doc.read_text())) - CONNECTOR_TOOLS)
+            if unknown:
+                fail(f"{doc.relative_to(ROOT)} names tools the connector does not list: {unknown}")
             for link in LINK_RE.findall(doc.read_text()):
                 if link.startswith("http"):
                     continue

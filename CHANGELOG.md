@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.0
+
+- Release 1 of the CRYPTYX connector: skills use only the 11 tools the remote MCP now lists (overview, asset study, episode study, metric scan, single-metric and multi-factor backtests, price history, live prices, data freshness, coverage, featured metrics). Heat check, notable read, regime, setups and signals, divergences and custom triggers are no longer referenced; they stay available on the CRYPTYX REST API and x402.
+- New routes: "is this move real / what followed" and "should I add on this dip" go to the asset study, then the episode study (free, 3 a day). Regime questions are answered from the readings.
+- Every answer ends with a next step the user can take; the agent never promises to alert, ping, monitor or schedule. No buy, sell, add, trim or scale-in menus.
+- One-liner aligned with the remote MCP server; "asset", not "coin", in prose.
+- The build fails if a skill names a tool the connector does not list.
+
 ## 0.5.0
 
 - One CRYPTYX on every surface: the README, plugin descriptions and router skill use the same positioning as the remote MCP server ("Sharpen your edge. Feed your agent the CRYPTYX quant engine."; institutional-grade quantitative intelligence, in plain English or all the way down).
