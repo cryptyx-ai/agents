@@ -3,6 +3,6 @@
   "owner": { "name": "CRYPTYX" },
   "metadata": { "description": "CRYPTYX skills and MCP connection for agents" },
   "plugins": [
-    { "name": "cryptyx", "source": "./", "description": "CRYPTYX — Digital Asset Intelligence: institutional-grade quantitative intelligence for your agent", "version": "0.5.0", "license": "MIT" }
+    { "name": "cryptyx", "source": "./", "description": "CRYPTYX — Digital Asset Intelligence: institutional-grade quant intelligence for your agent", "version": "0.6.0", "license": "MIT" }
   ]
 }
