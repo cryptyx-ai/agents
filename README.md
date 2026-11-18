@@ -11,9 +11,9 @@ It's a multi-factor, multi-horizon quant engine: 670+ metrics across 8 factor cl
 | Goal | Ask your agent |
 | --- | --- |
 | **Accumulate** with a rule, not a hunch | "My rule: add to ETH only when it's statistically oversold vs its 1-year history. Where is it now, and what followed the last times?" |
-| **Take profit** when the data says stretched | "Is BTC stretched on the 90- and 180-day horizons? What happened after similar readings?" |
+| **Take profit** when the data says extended | "Where is BTC on the 90- and 180-day horizons against its own history, and what followed similar readings?" |
 | **Trade short-term** with sharper entries and exits | "Which of ETH, SOL and DOGE have short-term momentum, and what changed this week?" |
-| **Catch statistically significant shifts** | "Which assets just had a statistically significant volatility expansion or trend breakout?" |
+| **Catch statistically significant shifts** | "Which assets just had a statistically significant volatility expansion?" |
 | **Hold long-term** on the right side of the trend | "Where are BTC and ETH on the 90-, 180- and 365-day horizons?" |
 | **Build and test strategies** | "Find assets that are oversold vs their 90-day history with an improving trend, then backtest that combination." |
 
