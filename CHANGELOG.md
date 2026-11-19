@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.1
+
+- Count-free copy (founder approved 2026-11-20): the plugin descriptions, README and skills no longer state scale numbers that drift as the engine grows ("200+ assets", "670+ metrics", "5+ years"). They say "hundreds of metrics", "the most-traded digital assets" and "every covered asset", and readings are scored against the asset's own trailing year, with daily history back to 2021 (the previous "scored against 5+ years" was wrong).
+- "asset", not "coin", in the plugin README and the Binance and Hyperliquid exchange-bridge references.
+- The build fails if shipped copy (READMEs, plugin and marketplace manifests, skills) carries a scale number or "coin" in prose; a GitHub Action runs the build on every PR.
+
 ## 0.6.0
 
 - Release 1 of the CRYPTYX connector: skills use only the 11 tools the remote MCP now lists (overview, asset study, episode study, metric scan, single-metric and multi-factor backtests, price history, live prices, data freshness, coverage, featured metrics). Heat check, notable read, regime, setups and signals, divergences and custom triggers are no longer referenced; they stay available on the CRYPTYX REST API and x402.

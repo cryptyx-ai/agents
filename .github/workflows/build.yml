@@ -1,0 +1,24 @@
+name: build
+
+# Validates the plugin on every PR: manifests in sync, skills name only connector
+# tools, links resolve, and no shipped copy carries a scale number or "coin".
+# A tagged release is pinned by marketplaces, so a count must never reach one.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate and build distributions
+        run: python3 scripts/build-distributions.py dist
