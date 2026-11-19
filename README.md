@@ -2,9 +2,9 @@
 
 **CRYPTYX — Digital Asset Intelligence. Sharpen your edge. Feed your agent the CRYPTYX quant engine.**
 
-Institutional-grade quant intelligence for digital assets. Scan 200+ assets on 670+ metrics, study every prior instance of a move, and build and backtest the strategies your agent runs.
+Institutional-grade quant intelligence for digital assets. Scan the market on hundreds of metrics, study every prior instance of a move, and build and backtest the strategies your agent runs.
 
-It's a multi-factor, multi-horizon quant engine: 670+ metrics across 8 factor classes for 200+ assets, each read on 8 horizons from 1 to 365 days and scored against 5+ years of daily history. Your agent reads the intelligence; your rules decide; your exchange executes.
+It's a multi-factor, multi-horizon quant engine: hundreds of metrics across 8 factor classes for the most-traded digital assets, each read on 8 horizons from 1 to 365 days and scored against the asset's own trailing year, with daily history back to 2021. Your agent reads the intelligence; your rules decide; your exchange executes.
 
 ## Start with a goal
 
@@ -22,8 +22,8 @@ Every answer ends with one next step: a recheck you can ask your own agent to sc
 ## What's under the hood
 
 - **Asset intelligence:** one asset on every horizon vs its own history and the market, every prior instance of a condition, and what followed at 7, 30 and 90 days vs the base rate.
-- **Market scan:** scan 200+ assets for a condition on any metric and horizon.
-- **Strategy research and backtesting:** one reading or several factors at once on 5+ years, every horizon vs the base rate.
+- **Market scan:** scan every asset CRYPTYX covers for a condition on any metric and horizon.
+- **Strategy research and backtesting:** one reading or several factors at once on the full daily history (back to 2021), every horizon vs the base rate.
 - **Statistically significant shifts** by factor class (volatility expansion, trend emergence, flow turns), found by scanning a metric across all assets.
 
 ## Connect

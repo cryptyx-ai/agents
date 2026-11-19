@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cryptyx",
-  "version": "0.6.0",
-  "description": "CRYPTYX — Digital Asset Intelligence. Institutional-grade quant intelligence for digital assets: scan 200+ assets on 670+ metrics, study every prior instance of a move, and build and backtest your own strategies. 8 factor classes, 8 horizons (1–365 days). Only asset symbols are shared.",
+  "version": "0.6.1",
+  "description": "CRYPTYX — Digital Asset Intelligence. Institutional-grade quant intelligence for digital assets: scan the market on hundreds of metrics, study every prior instance of a move, and build and backtest your own strategies. 8 factor classes, 8 horizons (1–365 days). Only asset symbols are shared.",
   "author": {
     "name": "CRYPTYX"
   },

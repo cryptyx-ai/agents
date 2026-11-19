@@ -34,6 +34,27 @@ TOOL_RE = re.compile(r"`((?:get|scan|analyze|check|evaluate|backtest|simulate|fo
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 LINK_RE = re.compile(r"\]\(([^)#]+)(?:#[^)]*)?\)")
 
+# Frozen copy carries no scale number (founder rule, 2026-11-19): a tagged release is
+# pinned by marketplaces (Grok) and never re-rendered, so a count in it drifts as the
+# engine grows. Same patterns as lib/__tests__/platform-stats-live-guard.test.ts in
+# the cryptyx repo ("670+", "~200", "5+ years", "160 signals").
+SCALE_NUMBER = (
+    ('"670+" style floor', re.compile(r"(?<![\w.$])\d{3,}(?:,\d{3})*\+")),
+    ('"~200" style approximation', re.compile(r"~\d{3,}(?:,\d{3})*(?![\w.-])")),
+    ('"5+ years" history', re.compile(r"\b\d+\+\s*(?:years?|yrs?)\b", re.I)),
+    (
+        '"160 signals" style count',
+        re.compile(
+            r"\b\d{3,}(?:,\d{3})*\s+(?:multi-factor\s+|atomic\s+|evidence-tiered\s+|tracked\s+|digital\s+|crypto\s+)?"
+            r"(?:metrics|assets|signals|setups)\b",
+            re.I,
+        ),
+    ),
+)
+# "asset", not "coin", in prose (cryptyx repo positioning-drift.test.ts). The lookarounds
+# skip tool names such as get_coin_study and proper nouns such as Bitcoin or Coinbase.
+COIN_WORD = re.compile(r"(?<![A-Za-z_])coins?(?![A-Za-z_])", re.I)
+
 
 def load(path: Path) -> dict:
     with path.open() as f:
@@ -42,6 +63,36 @@ def load(path: Path) -> dict:
 
 def fail(msg: str) -> None:
     raise SystemExit(f"build failed: {msg}")
+
+
+def copy_files() -> list[Path]:
+    """Every file that ships or is listed: READMEs, plugin and marketplace manifests, skills."""
+    files = [ROOT / "README.md", ROOT / "src/plugins/README.md"]
+    files += sorted(
+        p
+        for p in ROOT.rglob("*.json")
+        if p.name in ("plugin.json", "marketplace.json") and ".git" not in p.relative_to(ROOT).parts
+    )
+    files += sorted(p for p in (ROOT / "skills").rglob("*") if p.is_file() and p.name != ".DS_Store")
+    return files
+
+
+def check_scale_numbers() -> None:
+    """Fail on a hard-coded scale number or "coin" in prose anywhere in shipped copy."""
+    hits = []
+    for path in copy_files():
+        for n, line in enumerate(path.read_text().splitlines(), 1):
+            where = f"{path.relative_to(ROOT)}:{n}"
+            for label, pattern in SCALE_NUMBER:
+                m = pattern.search(line)
+                if m:
+                    hits.append(f'{where} {label}: "{m.group(0)}"')
+                    break
+            m = COIN_WORD.search(line)
+            if m:
+                hits.append(f'{where} "asset", not "coin": "{m.group(0)}"')
+    if hits:
+        fail("copy carries a scale number or \"coin\" (use count-free wording):\n  " + "\n  ".join(hits))
 
 
 def validate_sources() -> str:
@@ -101,6 +152,7 @@ def validate_sources() -> str:
                     continue
                 if not (doc.parent / link).resolve().is_file():
                     fail(f"broken link {link} in {doc.relative_to(ROOT)}")
+    check_scale_numbers()
     return version
 
 
